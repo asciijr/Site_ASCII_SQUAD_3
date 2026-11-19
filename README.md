@@ -1,7 +1,5 @@
 # Site_ASCII_SQUAD_3
 
-## Apresentação
-
 O projeto tem como objetivo desenvolver uma plataforma web institucional moderna, responsiva e de alta performance, transformando a presença digital da ASCII em um canal estratégico de aquisição de clientes B2B. Mais do que apresentar a empresa e seus serviços, o site busca funcionar como uma ferramenta de captação de oportunidades comerciais, proporcionando uma experiência de navegação intuitiva e direcionando os potenciais clientes às equipes Comercial e de Projetos.
 
 ### Objetivos do projeto
