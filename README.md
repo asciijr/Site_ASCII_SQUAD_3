@@ -12,6 +12,14 @@ O projeto tem como objetivo desenvolver uma plataforma web institucional moderna
 - **Marketing e métricas:** preparar a aplicação para integração com ferramentas de rastreamento e análise de campanhas.
 - **Apresentação dos serviços:** desenvolver um portfólio interativo que demonstre o valor das soluções oferecidas pela empresa.
 
-### Sobre o desenvolvimento
+## Stack
 
-O projeto segue os padrões de gestão do fluxo REDAP + Scrum e as diretrizes técnicas estabelecidas no Guia de Engenharia da ASCII, adotando práticas de desenvolvimento colaborativo, versionamento, revisão de código e controle de qualidade.
+| Camada | Tecnologia |
+|:---|:---|
+| Frontend | React + TypeScript + Vite (Atomic Design) |
+| Backend | Node.js LTS + TypeScript + NestJS (Monolito Modular) |
+| Banco | PostgreSQL 16 + Prisma (migrations versionadas) |
+| Testes | Vitest (frontend) · Jest (backend) |
+| Qualidade | ESLint + Prettier · Husky + lint-staged + commitlint |
+| Infra / CI | Docker + Docker Compose · GitHub Actions |
+
