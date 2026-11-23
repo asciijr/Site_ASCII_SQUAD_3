@@ -1,0 +1,7 @@
+# Impede o commit de arquivos com variáveis de ambiente
+if git diff --cached --name-only | grep -E '(^|/)\.env($|\.)'; then
+  echo "ERRO: arquivos .env não podem ser commitados."
+  exit 1
+fi
+
+npx lint-staged
