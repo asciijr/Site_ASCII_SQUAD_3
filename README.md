@@ -30,21 +30,23 @@ O projeto tem como objetivo desenvolver uma plataforma web institucional moderna
 | Infraestrutura para Tráfego Pago | Preparação da base de código para integração com Google Tag Manager (GTM), Meta Pixel e Google Analytics 4 (GA4). |
 | Formulário de Captação | Formulário dinâmico, orientado às necessidades e dores dos potenciais clientes, com envio das informações por e-mail. |
 
+
 ## 3. Pré-requisitos
 
-Antes de iniciar o desenvolvimento, certifique-se de possuir as seguintes ferramentas instaladas:
+Antes de iniciar o desenvolvimento, certifique-se de possuir:
 
-- [Node.js](https://nodejs.org/) (versão LTS)
-- npm (gerenciador de pacotes)
 - [Git](https://git-scm.com/)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [Visual Studio Code](https://code.visualstudio.com/) (recomendado)
+
+O Docker Desktop deve estar instalado e em execução.
 
 Para verificar as instalações:
 
 ```bash
-node --version
-npm --version
 git --version
+docker --version
+docker compose version
 ```
 
 ## 4. Instalação e configuração
@@ -52,36 +54,54 @@ git --version
 ### 4.1. Clonar o repositório
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/asciijr/Site_ASCII_SQUAD_3.git
 ```
 
-### 4.2. Acessar o diretório do frontend
+### 4.2. Acessar a pasta do projeto
 
 ```bash
-cd Site_ASCII_SQUAD_3/frontend
+cd Site_ASCII_SQUAD_3
 ```
 
-### 4.3. Instalar as dependências
+## 5. Executando o projeto com Docker
+
+Certifique-se de que o Docker Desktop esteja em execução.
+
+Na raiz do projeto, execute:
 
 ```bash
-npm install
+docker compose up --build
 ```
 
-## 5. Executando o projeto
+O Docker irá construir a imagem, instalar as dependências e iniciar o ambiente de desenvolvimento.
 
-Para iniciar o ambiente de desenvolvimento:
-
-```bash
-npm run dev
-```
-
-O Vite disponibilizará um endereço local, geralmente:
+A aplicação estará disponível em:
 
 ```text
 http://localhost:5173
 ```
 
-A aplicação será atualizada automaticamente durante o desenvolvimento (Hot Module Replacement).
+### 5.1. Encerrar o ambiente
+
+Para interromper a execução, pressione `Ctrl + C` no terminal.
+
+Para remover os containers e a rede do projeto:
+
+```bash
+docker compose down
+```
+
+### 5.2. Executar comandos de desenvolvimento
+
+Com o container em execução, os comandos devem ser executados através do Docker:
+
+```bash
+docker compose exec frontend npm run lint
+docker compose exec frontend npm run test:run
+docker compose exec frontend npm run build
+docker compose exec frontend npm run format:check
+```
+
 
 ## 6. Scripts disponíveis
 
