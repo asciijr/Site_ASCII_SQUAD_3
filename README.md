@@ -1,3 +1,4 @@
+
 # Site_ASCII_SQUAD_3
 
 O projeto tem como objetivo desenvolver uma plataforma web institucional moderna, responsiva e de alta performance, transformando a presença digital da ASCII em um canal estratégico de aquisição de clientes B2B. Mais do que apresentar a empresa e seus serviços, o site busca funcionar como uma ferramenta de captação de oportunidades comerciais, proporcionando uma experiência de navegação intuitiva e direcionando os potenciais clientes às equipes Comercial e de Projetos.
@@ -21,6 +22,8 @@ O projeto tem como objetivo desenvolver uma plataforma web institucional moderna
 | Qualidade | ESLint + Prettier · Husky + lint-staged + commitlint |
 | Infra / CI | Docker + Docker Compose · GitHub Actions |
 
+> **Observação:** Backend e banco de dados representam a arquitetura planejada do projeto. Sua implementação será realizada conforme o escopo e as necessidades do desenvolvimento.
+
 ## 2. Funcionalidades do MVP
 
 | Funcionalidade | Descrição |
@@ -30,12 +33,12 @@ O projeto tem como objetivo desenvolver uma plataforma web institucional moderna
 | Infraestrutura para Tráfego Pago | Preparação da base de código para integração com Google Tag Manager (GTM), Meta Pixel e Google Analytics 4 (GA4). |
 | Formulário de Captação | Formulário dinâmico, orientado às necessidades e dores dos potenciais clientes, com envio das informações por e-mail. |
 
-
 ## 3. Pré-requisitos
 
 Antes de iniciar o desenvolvimento, certifique-se de possuir:
 
 - [Git](https://git-scm.com/)
+- [Node.js LTS](https://nodejs.org/) e npm
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [Visual Studio Code](https://code.visualstudio.com/) (recomendado)
 
@@ -45,6 +48,8 @@ Para verificar as instalações:
 
 ```bash
 git --version
+node --version
+npm --version
 docker --version
 docker compose version
 ```
@@ -62,6 +67,16 @@ git clone https://github.com/asciijr/Site_ASCII_SQUAD_3.git
 ```bash
 cd Site_ASCII_SQUAD_3
 ```
+
+### 4.3. Instalar as dependências da raiz
+
+Na raiz do projeto, execute:
+
+```bash
+npm install
+```
+
+Esse comando instala as dependências de desenvolvimento da raiz e prepara os Git Hooks do Husky.
 
 ## 5. Executando o projeto com Docker
 
@@ -97,20 +112,21 @@ Com o container em execução, os comandos devem ser executados através do Dock
 
 ```bash
 docker compose exec frontend npm run lint
-docker compose exec frontend npm run test:run
-docker compose exec frontend npm run build
 docker compose exec frontend npm run format:check
+docker compose exec frontend npm run test:run
+docker compose exec frontend npm run typecheck
+docker compose exec frontend npm run build
 ```
-
 
 ## 6. Scripts disponíveis
 
-Os comandos abaixo devem ser executados dentro do diretório `frontend/`.
+Os comandos abaixo são executados dentro do diretório `frontend/` ou através do container Docker.
 
 | Comando | Descrição |
 |:---|:---|
 | `npm run dev` | Inicia o servidor de desenvolvimento. |
-| `npm run build` | Verifica o TypeScript e gera a versão de produção. |
+| `npm run build` | Gera a versão de produção com Vite. |
+| `npm run typecheck` | Verifica os tipos do TypeScript. |
 | `npm run preview` | Visualiza localmente a versão compilada. |
 | `npm run lint` | Executa a análise estática do código com ESLint. |
 | `npm run format` | Formata os arquivos com Prettier. |
@@ -220,7 +236,7 @@ chore: atualiza dependencias
 1. Atualizar a branch `develop`.
 2. Criar uma branch específica para a tarefa.
 3. Implementar a funcionalidade.
-4. Executar lint, testes e build.
+4. Executar lint, formatação, testes, typecheck e build.
 5. Realizar commits seguindo Conventional Commits.
 6. Enviar a branch para o GitHub.
 7. Abrir um Pull Request direcionado à `develop`.
@@ -233,17 +249,17 @@ Não realizar commits diretamente nas branches `main` e `develop`.
 Antes de solicitar a integração de uma alteração, execute:
 
 ```bash
-npm run lint
-npm run format:check
-npm run test:run
-npm run build
+docker compose exec frontend npm run lint
+docker compose exec frontend npm run format:check
+docker compose exec frontend npm run test:run
+docker compose exec frontend npm run typecheck
+docker compose exec frontend npm run build
 ```
 
-Todas as verificações devem ser aprovadas antes da abertura ou aprovação do Pull Request.
+Todas as verificações devem ser aprovadas antes da integração do Pull Request.
 
 ---
 
 **Squad 3 — Site ASCII**
 
 ASCII Soluções em Tecnologia | Universidade Federal de Uberlândia
-
