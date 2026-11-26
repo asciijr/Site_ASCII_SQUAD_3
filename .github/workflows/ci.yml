@@ -12,6 +12,19 @@ on:
       - main
 
 jobs:
+  branch-guard:
+    name: Validate Branch Flow
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.base_ref == 'main'
+    steps:
+      - name: Validate source branch
+        run: |
+          SOURCE="${{ github.head_ref }}"
+          if [[ "$SOURCE" != "develop" && ! "$SOURCE" =~ ^hotfix/ ]]; then
+            echo "PRs para main devem vir de develop ou hotfix/*."
+            exit 1
+          fi
+
   frontend:
     name: Validate Frontend
     runs-on: ubuntu-latest
