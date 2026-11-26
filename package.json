@@ -1,0 +1,40 @@
+{
+  "name": "site_ascii_squad_3",
+  "version": "1.0.0",
+  "description": "O projeto tem como objetivo desenvolver uma plataforma web institucional moderna, responsiva e de alta performance, transformando a presença digital da ASCII em um canal estratégico de aquisição de clientes B2B. Mais do que apresentar a empresa e seus serviços, o site busca funcionar como uma ferramenta de captação de oportunidades comerciais, proporcionando uma experiência de navegação intuitiva e direcionando os potenciais clientes às equipes Comercial e de Projetos.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asciijr/Site_ASCII_SQUAD_3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asciijr/Site_ASCII_SQUAD_3/issues"
+  },
+  "homepage": "https://github.com/asciijr/Site_ASCII_SQUAD_3#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.10.1"
+  }
+}
