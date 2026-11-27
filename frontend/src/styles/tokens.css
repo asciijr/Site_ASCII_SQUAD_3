@@ -6,6 +6,8 @@
   --color-green-400: #83e356;
   --color-white: #ffffff;
   --color-surface-soft: #f4f7fc;
+  --color-disabled-bg: #e2e8f1;
+  --color-disabled-text: #53637e;
 
   /* Fontes */
   --font-body: "Montserrat", system-ui, sans-serif;
