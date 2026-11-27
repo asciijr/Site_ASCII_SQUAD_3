@@ -1,8 +1,9 @@
 .button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  width: 100%;
   min-width: 274px;
   height: 52px;
   padding: 0 20px;
@@ -46,11 +47,14 @@
   outline-offset: 2px;
 }
 
-.fullWidth {
-  width: 100%;
+.icon {
+  flex-shrink: 0;
+  transform: rotate(-45deg);
 }
 
-.icon {
-  font-size: 14px;
-  line-height: 1;
+@media (min-width: 1024px) {
+  .button {
+    display: inline-flex;
+    width: auto;
+  }
 }

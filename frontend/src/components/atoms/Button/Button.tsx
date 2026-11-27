@@ -1,24 +1,18 @@
 import type { ReactNode } from "react";
+import ArrowIcon from "../ArrowIcon";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
   children: ReactNode;
   href: string;
   variant?: "primary" | "inverse";
-  fullWidth?: boolean;
 }
 
-function Button({ children, href, variant = "primary", fullWidth = false }: ButtonProps) {
-  const className = [styles.button, styles[variant], fullWidth ? styles.fullWidth : ""]
-    .filter(Boolean)
-    .join(" ");
-
+function Button({ children, href, variant = "primary" }: ButtonProps) {
   return (
-    <a className={className} href={href}>
+    <a className={`${styles.button} ${styles[variant]}`} href={href}>
       <span>{children}</span>
-      <span className={styles.icon} aria-hidden="true">
-        ↗
-      </span>
+      <ArrowIcon className={styles.icon} size={14} />
     </a>
   );
 }

@@ -10,7 +10,7 @@ const NAV_ITEMS = [
 
 function Header() {
   return (
-    <header className={styles.header}>
+    <header id="top" className={styles.header}>
       <div className={styles.inner}>
         <a className={styles.logoLink} href="#top">
           <Logo />
