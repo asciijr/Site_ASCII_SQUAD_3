@@ -4,7 +4,6 @@
   justify-content: space-between;
   gap: 24px;
   width: 100%;
-  min-width: 274px;
   height: 52px;
   padding: 0 20px;
   border-radius: var(--radius-sm);
@@ -56,5 +55,6 @@
   .button {
     display: inline-flex;
     width: auto;
+    min-width: 274px;
   }
 }
