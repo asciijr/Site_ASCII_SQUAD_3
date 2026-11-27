@@ -1,0 +1,17 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 58px;
+  padding: 0 20px;
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  color: var(--color-navy-900);
+  font-size: 15px;
+}
+
+.prompt {
+  color: var(--color-blue-600);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
