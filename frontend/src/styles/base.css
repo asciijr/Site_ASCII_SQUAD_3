@@ -76,3 +76,9 @@ button {
   font-weight: 700;
   font-display: swap;
 }
+
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: 76px;
+  }
+}

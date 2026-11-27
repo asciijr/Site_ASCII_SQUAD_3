@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../../atoms/Button";
 import Logo from "../../atoms/Logo";
 import styles from "./Header.module.css";
@@ -9,6 +10,8 @@ const NAV_ITEMS = [
 ];
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header id="top" className={styles.header}>
       <div className={styles.inner}>
@@ -32,10 +35,34 @@ function Header() {
           <Button href="#contact">Solicite seu orçamento</Button>
         </div>
 
-        <button type="button" className={styles.menuButton}>
-          Menu
+        <button
+          type="button"
+          className={styles.menuButton}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          {isMenuOpen ? "Fechar" : "Menu"}
         </button>
       </div>
+
+      {isMenuOpen && (
+        <nav id="mobile-menu" className={styles.mobileNav} aria-label="Menu mobile">
+          <ul className={styles.mobileList}>
+            {NAV_ITEMS.map((item) => (
+              <li key={item.href}>
+                <a
+                  className={styles.mobileLink}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }

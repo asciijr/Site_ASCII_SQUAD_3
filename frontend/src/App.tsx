@@ -1,5 +1,6 @@
 import Header from "./components/organisms/Header";
 import Hero from "./components/organisms/Hero";
+import MobileCtaBar from "./components/organisms/MobileCtaBar";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <main>
         <Hero />
       </main>
+      <MobileCtaBar />
     </>
   );
 }

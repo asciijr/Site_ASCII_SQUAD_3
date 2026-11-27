@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent, within } from "@testing-library/react";
 import Header from "../components/organisms/Header";
 
 describe("Header", () => {
@@ -19,5 +19,21 @@ describe("Header", () => {
     expect(
       screen.getByRole("link", { name: /solicite seu orçamento/i, hidden: true })
     ).toBeInTheDocument();
+  });
+
+  it("deve abrir o menu mobile e fechá-lo ao escolher uma seção", () => {
+    render(<Header />);
+
+    const toggle = screen.getByRole("button", { name: "Menu" });
+    expect(toggle).toHaveAttribute("aria-expanded", "false");
+
+    fireEvent.click(toggle);
+
+    expect(toggle).toHaveAttribute("aria-expanded", "true");
+    const mobileNav = screen.getByRole("navigation", { name: "Menu mobile" });
+
+    fireEvent.click(within(mobileNav).getByRole("link", { name: "Portfólio" }));
+
+    expect(screen.queryByRole("navigation", { name: "Menu mobile" })).not.toBeInTheDocument();
   });
 });
