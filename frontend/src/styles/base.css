@@ -37,7 +37,7 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-green-400);
+  outline: 3px solid var(--color-blue-600);
   outline-offset: 3px;
 }
 

@@ -3,6 +3,10 @@
   color: var(--color-white);
 }
 
+.hero :focus-visible {
+  outline-color: var(--color-white);
+}
+
 .inner {
   display: grid;
   grid-template-areas:
