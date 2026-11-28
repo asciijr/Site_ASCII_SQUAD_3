@@ -1,0 +1,60 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  height: 52px;
+  padding: 0 20px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.primary {
+  background: var(--color-blue-600);
+  color: var(--color-white);
+}
+
+.primary:hover,
+.primary:active {
+  background: var(--color-navy-900);
+}
+
+.primary:focus-visible {
+  outline: 2px solid var(--color-navy-900);
+  outline-offset: 2px;
+}
+
+.inverse {
+  background: var(--color-white);
+  color: var(--color-navy-900);
+}
+
+.inverse:hover,
+.inverse:active {
+  background: var(--color-surface-soft);
+}
+
+.inverse:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+}
+
+.icon {
+  flex-shrink: 0;
+  transform: rotate(-45deg);
+}
+
+@media (min-width: 1024px) {
+  .button {
+    display: inline-flex;
+    width: auto;
+    min-width: 274px;
+  }
+}

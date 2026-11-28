@@ -1,0 +1,35 @@
+:root {
+  /* Cores */
+  --color-blue-600: #1756ae;
+  --color-navy-900: #050f60;
+  --color-navy-700: #152574;
+  --color-green-400: #83e356;
+  --color-white: #ffffff;
+  --color-surface-soft: #f4f7fc;
+  --color-disabled-bg: #e2e8f1;
+  --color-disabled-text: #53637e;
+
+  /* Fontes */
+  --font-body: "Montserrat", system-ui, sans-serif;
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-size-title: 38px;
+  --font-size-body: 16px;
+
+  /* Raios */
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+
+  /* Layout (mobile-first: valores do mobile) */
+  --gutter: 24px;
+  --header-height: 80px;
+  --container-max: 1240px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 100px;
+    --header-height: 100px;
+    --font-size-title: 64px;
+    --font-size-body: 18px;
+  }
+}
